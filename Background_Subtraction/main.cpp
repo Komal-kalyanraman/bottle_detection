@@ -203,9 +203,11 @@ int main(int argc, char* argv[])
                         Point2f rect_points[4];
                         minRect[i].points( rect_points );
 
+            /////////////////////////////// Drawing Rotated Rectangle
                         for( int j = 0; j < 4; j++ )
                            line( src, rect_points[j], rect_points[(j+1)%4], CV_RGB(0,255,0), 3, 8 );
 
+            /////////////////////////////// Calculating length, width & area of bounding box rectangle
                         x_width = rect_points[0].x - rect_points[1].x;
                         y_width = rect_points[0].y - rect_points[1].y;
                         rect_width = sqrt((x_width * x_width) + (y_width * y_width));
@@ -219,6 +221,8 @@ int main(int argc, char* argv[])
 //                        cout << "Bounded rect area = " << rect_area << endl;
 //                        cout << "Contour area = " << contour_area << endl;
 
+            /////////////////////////////// Finding ratio of contour area & bounding box rectangle                      
+            /////////////////////////////// It will appprox to 0.9 for Tin can as it is Rect in shape and 0.7 for bottle
                         rect_detection_ratio = contour_area/rect_area;
 //                        cout << "Rect ratio = " << rect_detection_ratio << endl;
                         }
