@@ -1,8 +1,7 @@
 # Sequence of techniques used for template matching:
 
 ### SURF
-This is used for **keypoint extraction**
-**_minHessian_** has to be used for setting the threshold for **keypoint** selection.
+This is used for **keypoint extraction**. For setting the threshold for **keypoint** selection **_minHessian_** has to be adjusted.
 
 ### FLANN Matcher
 This is used for finding the **best matches**. A bounding box is drawn on the **Good Matches**.
